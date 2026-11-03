@@ -5,7 +5,7 @@ A **single, static website** for presenting three one-page homepage design direc
 ## Design directions
 - **Preview 1**: Inspired by the existing VIP Junk Removal homepage structure: high-impact full-bleed hero, prominent free-estimate form, benefit rail, photo service tiles, about section, and final CTA. Adapted for Glasford Tree Trimming using forest green and warm gold.
 - **Preview 2**: Earthy editorial direction with cream backgrounds, serif typography, rounded imagery, and a calm brand presence.
-- **Preview 3**: Industrial direction with charcoal backgrounds, orange accents, heavy display type, and high-contrast photography.
+- **Preview 3**: Based on the MW Landscaping Services design direction, adapted for tree services. Dark evergreen and gold palette, Playfair-style headings, translucent navigation, a four-step estimate quiz, six photo service cards, gallery, four-step process, local service area, and FAQs. Preview mode never submits or stores contact details.
 
 The fixed design studio bar at the top switches instantly between the three directions. Each panel is a responsive one-page website, and tabs can be linked with `#preview-1`, `#preview-2`, or `#preview-3`.
 
