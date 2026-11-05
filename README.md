@@ -1,28 +1,31 @@
-# Glasford Tree Trimming - Three Design Preview Website
+# Glasford Tree Trimming Website
 
-A **single, static website** for presenting three one-page homepage design directions. There is no separate site or deployment per preview.
+This repository contains the **single approved website design**, selected as **Preview 2** during the client's design review.
 
-## Design directions
-- **Preview 1**: Inspired by the existing VIP Junk Removal homepage structure: high-impact full-bleed hero, prominent free-estimate form, benefit rail, photo service tiles, about section, a six-card sample review carousel, photo gallery with enlarge-on-click, four-step process, service area, six-question FAQ, and final CTA. Adapted for Glasford Tree Trimming using forest green and warm gold.
-- **Preview 2**: Earthy editorial direction with cream backgrounds, serif typography, rounded imagery, and a calm brand presence. Expanded with a six-card sample review carousel, photo gallery with image lightbox, four-step process, service-area section and six-question FAQ.
-- **Preview 3**: Based on the MW Landscaping Services design direction, adapted for tree services. Dark evergreen and gold palette, Playfair-style headings, translucent navigation, a four-step estimate quiz, six photo service cards, gallery, four-step process, local service area, and FAQs. Preview mode never submits or stores contact details.
+The website is now a single responsive one-page site. The old preview selector, Preview 1 and Preview 3 have been removed from the current codebase. Prior concepts remain available through Git history if needed.
 
-The fixed design studio bar at the top switches instantly between the three directions. Each panel is a responsive one-page website, and tabs can be linked with `#preview-1`, `#preview-2`, or `#preview-3`.
+## Design and content
 
-## Development and deployment
-This is a no-build static site: `index.html` contains the CSS and JavaScript. It is suitable for Vercel's **Other** framework or GitHub Pages.
+- Warm cream and forest-green visual identity with editorial serif headings and rounded photography.
+- Responsive navigation and mobile hamburger menu.
+- Hero, tree-care services, customer-experience sample review carousel, about, photo gallery, four-step process, service area, FAQs, and contact call to action.
+- Review carousel automatically advances and supports manual arrows. Gallery pictures open in a lightbox.
 
-Project source: `ignite-company/glasford-preview-1`.
+## Deployment
 
-## Client approval checklist
-- Confirm final business name, service area, and contact phone/email.
-- Confirm which services to promote and replace both preview carousels' clearly labeled fictional example reviews with approved, genuine testimonials.
-- Replace stock Pexels images with authentic project and crew photos as available.
-- Connect the estimate form to the approved CRM or intake endpoint. **Preview form deliberately sends nothing.**
-- Test mobile view and accessibility before real customer launch.
+- Source: `ignite-company/glasford-preview-1`
+- Live Vercel project: `glasford-preview-1-nerb`
+- URL: https://glasford-preview-1-nerb.vercel.app/
 
-## Image use
-Tree-work stock imagery is loaded from Pexels photo IDs 31127615, 5644617, 11257617, 8489862, 6218318, 7812847, and 209229. These are illustrative photos and should not be described as Glasford's own team or completed jobs.
+The site is a static `index.html` with inline CSS and JavaScript and no build step.
 
-## Search visibility
-The preview includes `noindex,nofollow` to discourage indexing. Remove only when a final public marketing site is approved.
+## Before public marketing launch
+
+- Replace fictional **explicitly labeled** sample testimonials with genuine, authorized Glasford reviews.
+- Replace Pexels stock photography with authorized Glasford project photographs.
+- Confirm business name, service area, telephone number, and email.
+- Connect the demo estimate CTA to a working CRM or intake form.
+- Test the site across mobile devices.
+- Remove the `noindex,nofollow` directive when the final public site is ready.
+
+The current site is still in client-review mode. Contact/estimate interactions intentionally do not transmit customer data.
