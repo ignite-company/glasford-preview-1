@@ -1,31 +1,43 @@
-# Glasford Tree Trimming Website
+# Glasford Tree Trimming & Landscape Website
 
-This repository contains the **single approved website design**, selected as **Preview 2** during the client's design review.
+Approved **Preview 2** was retained as the sole design. The former three-preview selector and other concepts are gone from the current live site, although previous work remains in Git history.
 
-The website is now a single responsive one-page site. The old preview selector, Preview 1 and Preview 3 have been removed from the current codebase. Prior concepts remain available through Git history if needed.
+## Pages and site structure
 
-## Design and content
+- `/`: Original approved editorial homepage, updated with 11 distinct photos that correspond to the surrounding copy.
+- `/services/`: Overview of available tree-care services.
+- `/services/tree-trimming/`: Tree trimming detail.
+- `/services/tree-removal/`: Tree removal detail.
+- `/services/tree-pruning/`: Tree pruning detail.
+- `/service-areas/`: Where services may be available.
+- `/service-areas/port-st-lucie/`: Port St. Lucie page.
+- `/service-areas/west-palm-beach/`: West Palm Beach page.
+- `/about/`: Business approach.
+- `/gallery/`: Clearly labeled illustrative stock imagery.
+- `/contact/`: Estimate information and contact page. The intake workflow is **not connected** yet.
 
-- Warm cream and forest-green visual identity with editorial serif headings and rounded photography.
-- Responsive navigation and mobile hamburger menu.
-- Hero, tree-care services, customer-experience sample review carousel, about, photo gallery, four-step process, service area, FAQs, and contact call to action.
-- Review carousel automatically advances and supports manual arrows. Gallery pictures open in a lightbox.
+## Search readiness
 
-## Deployment
+The site now has original text for the relevant service and service-area pages, unique titles/descriptions, canonical links, internal navigation and footer links, page-specific image alt text, Organization/Breadcrumb structured data without a private street address, `robots.txt`, and `sitemap.xml`.
 
-- Source: `ignite-company/glasford-preview-1`
-- Live Vercel project: `glasford-preview-1-nerb`
-- URL: https://glasford-preview-1-nerb.vercel.app/
+**The site's pages remain `noindex,follow` intentionally.** The site should not be submitted for public indexing until:
+1. Real, approved customer testimonials replace the six explicit sample reviews on the homepage.
+2. A verified business phone/email and working estimate flow are installed.
+3. The business approves the final coverage areas, business name and service scope.
+4. The stock images are approved for use or replaced with authorized Glasford work photos.
+5. The final live domain is chosen, then the canonical links, sitemap and structured-data URLs are updated accordingly.
+6. The pages are QA-tested on real devices and their index robots directives switched to `index,follow`.
 
-The site is a static `index.html` with inline CSS and JavaScript and no build step.
+Stock images come from Pexels and are **not** represented as Glasford's completed projects. Do not add false review stars or aggregate ratings to structured data.
 
-## Before public marketing launch
+## Implementation & deployment
 
-- Replace fictional **explicitly labeled** sample testimonials with genuine, authorized Glasford reviews.
-- Replace Pexels stock photography with authorized Glasford project photographs.
-- Confirm business name, service area, telephone number, and email.
-- Connect the demo estimate CTA to a working CRM or intake form.
-- Test the site across mobile devices.
-- Remove the `noindex,nofollow` directive when the final public site is ready.
+- Source: `ignite-company/glasford-preview-1`.
+- Vercel project: `glasford-preview-1-nerb`.
+- Current URL: https://glasford-preview-1-nerb.vercel.app/
+- Static HTML and inline CSS/JavaScript. New pages are directory-based `index.html` files.
+- No business owner's home or street address has been published.
 
-The current site is still in client-review mode. Contact/estimate interactions intentionally do not transmit customer data.
+## Notes
+
+Port St. Lucie is in St. Lucie County. West Palm Beach is in Palm Beach County. Copy distinguishes the two areas; coverage outside them is described as subject to confirmation.
