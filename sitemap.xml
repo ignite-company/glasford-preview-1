@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://glasford-preview-1-nerb.vercel.app/</loc></url>
-  <url><loc>https://glasford-preview-1-nerb.vercel.app/services/</loc></url>
-  <url><loc>https://glasford-preview-1-nerb.vercel.app/services/tree-trimming/</loc></url>
-  <url><loc>https://glasford-preview-1-nerb.vercel.app/services/tree-removal/</loc></url>
-  <url><loc>https://glasford-preview-1-nerb.vercel.app/services/tree-pruning/</loc></url>
-  <url><loc>https://glasford-preview-1-nerb.vercel.app/service-areas/</loc></url>
-  <url><loc>https://glasford-preview-1-nerb.vercel.app/service-areas/port-st-lucie/</loc></url>
-  <url><loc>https://glasford-preview-1-nerb.vercel.app/service-areas/west-palm-beach/</loc></url>
-  <url><loc>https://glasford-preview-1-nerb.vercel.app/about/</loc></url>
-  <url><loc>https://glasford-preview-1-nerb.vercel.app/gallery/</loc></url>
-  <url><loc>https://glasford-preview-1-nerb.vercel.app/contact/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/about/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/contact/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/gallery/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/guides/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/guides/preparing-trees-for-florida-storm-season/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/guides/tree-trimming-vs-tree-pruning/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/guides/when-to-trim-palm-trees-in-south-florida/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/service-areas/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/service-areas/palm-beach-county/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/service-areas/port-st-lucie/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/service-areas/st-lucie-county/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/service-areas/west-palm-beach/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/services/branch-clearance/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/services/debris-cleanup/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/services/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/services/palm-tree-care/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/services/storm-preparation/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/services/tree-pruning/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/services/tree-removal/</loc></url>
+<url><loc>https://glasford-preview-1-nerb.vercel.app/services/tree-trimming/</loc></url>
 </urlset>
