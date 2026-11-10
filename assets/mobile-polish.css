@@ -1,0 +1,133 @@
+
+/* Glasford mobile-first quality pass: applies to home, services, locations and guides. */
+html{overflow-x:clip;scroll-behavior:smooth}
+body{min-width:0;max-width:100%;overflow-x:clip}
+img,video,svg,iframe{max-width:100%}
+.p2 .hero>*,.hero-grid>*,.twocol>*,.inner-cards>*,.feature-row>*,.footer-grid>*,.growth-grid>*,.location-grid>*,.gl-process-grid>*,.gl-area-grid>*{min-width:0}
+h1,h2,h3,.growth-card h3,.location-card h3{overflow-wrap:break-word}
+.nav-mobile-group summary:focus-visible,.gl-mobile-menu summary:focus-visible,.inner-nav .menu summary:focus-visible,.gl-slider-arrow:focus-visible,.gl-gallery-tile:focus-visible,.gl-lightbox-close:focus-visible{outline:3px solid #376a48;outline-offset:3px}
+.mobile-return{display:none}
+@media(max-width:1120px){
+.p2 .site-nav,.inner-nav{position:sticky!important;top:0;top:env(safe-area-inset-top,0px);z-index:110!important;isolation:isolate;background:#f8f7f1;box-shadow:0 2px 12px #132c1b0d}
+.p2 .gl-mobile-menu,.inner-nav .menu{position:relative;z-index:130}
+.p2 .gl-mobile-menu nav,.inner-nav .menu-list{top:calc(100% + 7px);right:0;left:auto;width:min(360px,calc(100vw - 28px));max-width:calc(100vw - 28px);max-height:min(76dvh,calc(100dvh - 86px));overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;-webkit-overflow-scrolling:touch;border-radius:14px;box-shadow:0 20px 50px #112a1c35}
+.inner-nav .menu-list{padding:8px}
+.nav-mobile-group summary{min-height:52px!important;font-size:15px!important;padding:14px 16px!important}
+.nav-mobile-options a{font-size:14px!important;min-height:48px!important;display:flex!important;align-items:center;line-height:1.4!important;padding:12px 14px!important}
+.p2 .gl-mobile-menu nav>a,.inner-nav .menu-list>a{min-height:48px!important;display:flex!important;align-items:center;font-size:14px!important;padding:12px 16px!important;line-height:1.4}
+.p2 .gl-mobile-menu summary,.inner-nav .menu summary{min-width:48px;min-height:48px}
+.inner-nav-row{min-height:76px;gap:10px}
+.p2 .site-nav{gap:12px}
+.p2 .site-nav>.nav-pill{display:none}
+}
+@media(max-width:820px){
+.hero-grid{grid-template-columns:minmax(0,1fr)!important;gap:28px!important}
+.twocol,.gl-area-grid,.gl-process .gl-process-intro{grid-template-columns:minmax(0,1fr)!important}
+.inner-cards,.feature-row,.photo-grid,.footer-grid{grid-template-columns:minmax(0,1fr)!important}
+.inner-cards{gap:17px}
+.inner-section{padding:58px 0}
+.inner-hero{padding:36px 0 50px}
+.inner-hero .hero-image{width:100%;max-width:100%;height:clamp(250px,65vw,375px)}
+.inner-hero .hero-image img{width:100%;height:100%;border-radius:115px 115px 11px 11px}
+.inner-hero h1{font-size:clamp(38px,7.5vw,56px);line-height:1.07;margin:12px 0 17px;overflow-wrap:anywhere}
+.inner-hero p{font-size:15.5px;line-height:1.8;max-width:640px}
+.inner-section h2,.growth-section h2,.location-list-section h2{line-height:1.12;overflow-wrap:break-word}
+.inner-cta{padding:58px 0}
+.inner-cta h2{font-size:clamp(36px,7vw,49px)}
+.card-image img,.photo-grid img{height:235px}
+.feature-row{gap:13px}
+.feature-box{padding:23px}
+.feature-box p,.inner-card-body p{font-size:14px;line-height:1.75}
+.inner-card-body{padding:22px}
+.inner-card-body .small-link,.small-link{font-size:14px;display:inline-flex;min-height:44px;align-items:center}
+.growth-pills a,.growth-link,.growth-card a,.location-card a{min-height:44px;display:inline-flex;align-items:center;line-height:1.4;font-size:14px}
+.growth-pills{gap:11px}
+.growth-pills a{padding:11px 15px}
+.growth-card p,.location-card p{font-size:14px;line-height:1.75}
+.growth-card-body{padding:21px}
+.location-card{padding:22px}
+.location-grid{grid-template-columns:minmax(0,1fr);gap:13px}
+.footer-grid{gap:17px}
+.site-footer{padding:36px 0 30px}
+.footer-links a{display:flex;align-items:center;min-height:40px;font-size:14px}
+.site-footer p{line-height:1.7}
+.inner-faq summary{font-size:15px;line-height:1.45;min-height:56px;align-items:center}
+.inner-faq details p{font-size:14px;line-height:1.8}
+.pill{min-height:50px;min-width:0;text-align:center}
+.growth-resource,.article-resource{padding:20px}
+.bullet-list{line-height:1.8}
+.mobile-return{display:flex;justify-content:center;background:#f8f7f1;padding:21px 20px;border-top:1px solid #e2e9dc}
+.mobile-return a{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid #c3d3c0;border-radius:99px;padding:12px 20px;min-height:48px;font-size:14px;font-weight:800;color:#315b3e}
+.mobile-return a span{font-size:19px}
+}
+@media(max-width:580px){
+.section-wrap,.shell{width:100%;max-width:100%;padding-inline:20px}
+.p2 .site-nav{padding:12px 18px!important;min-height:70px}
+.inner-nav-row{min-height:70px}
+.p2 .hero{padding:30px 20px 42px!important;grid-template-columns:minmax(0,1fr);gap:25px}
+.p2 .hero .eyebrow{font-size:10px;letter-spacing:.14em;line-height:1.5}
+.p2 h1{font-size:clamp(39px,10.5vw,54px)!important;line-height:1.04!important;margin:14px 0 13px;letter-spacing:-.045em;overflow-wrap:anywhere}
+.p2 .hero p{font-size:15.5px;line-height:1.75}
+.p2 .hero .btn-forest{width:100%;min-height:52px;padding:14px 18px;font-size:14px}
+.p2 .hero .text-link{display:flex;justify-content:center;align-items:center;min-height:44px;margin:9px 0 0;font-size:14px}
+.p2 .hero-image{height:clamp(245px,77vw,340px)!important;max-width:100%;margin:0!important}
+.p2 .hero-image img{height:100%;width:100%;border-radius:125px 125px 8px 8px}
+.p2 .hero-image .tag{left:0;bottom:10px;padding:11px 13px;max-width:calc(100% - 12px)}
+.p2 .hero-image .tag strong{font-size:19px;line-height:1.12}
+.p2 .hero-image .tag small{font-size:9px;letter-spacing:.08em}
+.p2 .value-rail{padding:16px 0}
+.p2 .value-rail .section-wrap{justify-content:flex-start;gap:9px 17px;font-size:12px}
+.p2 .value-rail i{font-size:19px}
+.p2 .services,.p2 .about{padding:55px 0}
+.p2 .section-heading{display:block}
+.p2 .section-heading h2,.p2 .about h2,.p2 .cta h2{font-size:clamp(35px,9.5vw,48px)!important}
+.p2 .section-heading p{font-size:14.5px;max-width:100%;line-height:1.75}
+.p2 .service-grid{grid-template-columns:minmax(0,1fr);gap:16px}
+.p2 .service-card{padding:10px 10px 21px}
+.p2 .service-card img{height:195px}
+.p2 .service-card h3{font-size:29px}
+.p2 .service-card p{font-size:14px;line-height:1.7}
+.p2 .service-more{font-size:14px;min-height:44px;display:inline-flex;align-items:center}
+.p2 .about-image{height:265px}
+.p2 .gl-section{padding:55px 0}
+.p2 .gl-head h2,.p2 .gl-process h2,.p2 .gl-area-copy h2{font-size:clamp(35px,9vw,48px)}
+.gl-slider-viewport{grid-auto-columns:calc(100% - 3px)!important;gap:13px}
+.p2 .gl-review-card{padding:22px;min-height:0}
+.gl-review-card blockquote{font-size:14.5px;line-height:1.72}
+.gl-slider-arrow{width:48px;height:48px;min-width:48px;min-height:48px}
+.p2 .gl-gallery-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:180px 145px 145px;gap:8px}
+.gl-gallery-caption{font-size:12px;line-height:1.3;left:10px;bottom:10px}
+.gl-gallery-zoom{min-height:36px;min-width:36px}
+.gl-lightbox{width:calc(100% - 12px);max-height:calc(100dvh - 20px);padding:10px}
+.gl-lightbox img{max-height:calc(100dvh - 112px)}
+.gl-lightbox-close{min-width:46px;min-height:46px;right:10px;top:10px}
+.gl-process-grid{grid-template-columns:minmax(0,1fr);gap:11px}
+.gl-process-card{min-height:0;padding:22px}
+.gl-faq-list details{padding-inline:8px}
+.gl-faq-list summary{font-size:14.5px;min-height:56px;line-height:1.45}
+.p2 .cta{padding:64px 20px 72px}
+.p2 .cta p{font-size:14.5px}
+.p2 .expanded-footer nav{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 14px}
+.p2 .expanded-footer nav a{font-size:13px;display:inline-flex;align-items:center;min-height:40px;line-height:1.35}
+.growth-section,.location-list-section{padding:52px 0}
+.growth-grid,.growth-grid.three,.location-grid{grid-template-columns:minmax(0,1fr)}
+.growth-card img{height:190px}
+.growth-card h3,.location-card h3{font-size:26px}
+.growth-intro,.location-intro{font-size:14.5px!important;line-height:1.75}
+.inner-hero .hero-image{height:clamp(235px,73vw,340px)}
+.inner-hero h1{font-size:clamp(35px,9.2vw,46px)!important}
+.inner-hero .hero-crumbs{font-size:12px;line-height:1.6;overflow-wrap:anywhere}
+.inner-cta .pill{width:100%;max-width:370px}
+.site-footer .footer-note{font-size:12px}
+.article-body h2,.growth-article h2{font-size:30px}
+.article-body p,.growth-article p{font-size:15px}
+}
+@media(max-width:370px){
+.p2 .hero .eyebrow{letter-spacing:.1em}
+.p2 h1{font-size:40px!important}
+.p2 .hero-image{height:250px!important}
+.p2 .hero-image .tag strong{font-size:17px}
+.p2 .gl-mobile-menu nav,.inner-nav .menu-list{width:calc(100vw - 20px);max-width:calc(100vw - 20px)}
+.growth-pills a{width:100%;justify-content:flex-start}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.growth-card,.location-card,.gl-gallery-tile img,.p2 .service-card,.nav-hub-arrow{transition:none!important}}
