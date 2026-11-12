@@ -106,6 +106,10 @@
   }
   function openQuiz(){
     lastFocus=document.activeElement;
+    const priorResult=overlay.querySelector(".glq-finish");
+    if(priorResult)priorResult.remove();
+    [title,intro,fields,error].forEach(function(el){el.hidden=false;});
+    form.querySelector(".glq-actions").hidden=false;
     current=0;answers={};busy=false;render();
     overlay.hidden=false;document.body.classList.add("glq-locked");
     document.querySelectorAll(".gl-mobile-menu[open],.inner-nav .menu[open]").forEach(function(m){m.open=false;});
@@ -125,21 +129,22 @@
   function showResult(sent){
     const content=overlay.querySelector(".glq-content");
     form.querySelector(".glq-actions").hidden=true;
-    content.replaceChildren();
+    [title,intro,fields,error].forEach(function(el){el.hidden=true;});
+    const result=document.createElement("div");result.className="glq-finish";content.appendChild(result);
     const symbol=document.createElement("div");symbol.className="glq-finish-icon";symbol.textContent=sent?"✓":"✳";
     const h=document.createElement("h2");h.id="glq-heading";h.textContent=sent?"Thank you! Your request was sent.":"Your quote details are ready";
     const p=document.createElement("p");p.textContent=sent?"We received your information. Glasford will review your request and follow up.":"This is a site preview. Your request has not been sent because the form has no connected submission destination yet.";
-    content.append(symbol,h,p);
+    result.append(symbol,h,p);
     if(!sent){
-      const pre=document.createElement("pre");pre.className="glq-summary";pre.textContent=summaryText();content.appendChild(pre);
+      const pre=document.createElement("pre");pre.className="glq-summary";pre.textContent=summaryText();result.appendChild(pre);
       const copy=document.createElement("button");copy.type="button";copy.className="glq-primary";copy.textContent="Copy my request";
       copy.addEventListener("click",async function(){
         try{await navigator.clipboard.writeText(summaryText());copy.textContent="Copied ✓";}
         catch(e){const range=document.createRange();range.selectNodeContents(pre);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);copy.textContent="Select and copy the details above";}
       });
-      content.appendChild(copy);
+      result.appendChild(copy);
     }
-    const done=document.createElement("button");done.type="button";done.className="glq-secondary glq-done";done.textContent="Close";done.addEventListener("click",closeQuiz);content.appendChild(done);
+    const done=document.createElement("button");done.type="button";done.className="glq-secondary glq-done";done.textContent="Close";done.addEventListener("click",closeQuiz);result.appendChild(done);
     stepLabel.textContent=sent?"Request complete":"Preview complete";
     fill.style.width="100%";
     done.focus();
