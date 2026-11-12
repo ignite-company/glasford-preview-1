@@ -131,3 +131,83 @@ h1,h2,h3,.growth-card h3,.location-card h3{overflow-wrap:break-word}
 .growth-pills a{width:100%;justify-content:flex-start}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.growth-card,.location-card,.gl-gallery-tile img,.p2 .service-card,.nav-hub-arrow{transition:none!important}}
+
+
+/* Glasford quote quiz + headline-font wordmark. */
+.site-nav > .gl-brand-wordmark,.inner-nav-row > .gl-brand-wordmark{
+  display:inline-flex!important;flex-direction:column;align-items:flex-start;justify-content:center;
+  gap:1px!important;min-width:0;max-width:min(400px,48vw);flex:0 1 auto;
+  color:#234535!important;text-decoration:none!important;line-height:1.08!important;
+  font-family:"DM Serif Display",Georgia,serif!important;font-weight:400!important;letter-spacing:-.035em!important;
+}
+.gl-brand-top{display:block;font-size:clamp(24px,2vw,31px)!important;font-weight:400!important}
+.gl-brand-bottom{display:block;font-size:clamp(13px,1.2vw,18px)!important;font-weight:400!important;letter-spacing:-.012em;white-space:normal}
+.gl-brand-wordmark:hover{color:#497b55!important}
+.gl-brand-wordmark:focus-visible,.glq-overlay button:focus-visible,.glq-overlay input:focus-visible,.glq-overlay textarea:focus-visible,.glq-floating-cta:focus-visible{outline:3px solid #b18b36!important;outline-offset:3px}
+.glq-locked{overflow:hidden!important;touch-action:none}
+.glq-overlay[hidden]{display:none!important}
+.glq-overlay{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:16px;overscroll-behavior:contain;font-family:"DM Sans",Arial,sans-serif}
+.glq-backdrop{position:absolute;inset:0;background:rgba(11,27,19,.70);backdrop-filter:blur(6px)}
+.glq-dialog{position:relative;z-index:1;width:min(100%,560px);max-height:min(94dvh,780px);overflow-y:auto;background:#fbfaf5;color:#183528;border:1px solid #e2e8dd;border-radius:22px;box-shadow:0 22px 90px #09180d57;scrollbar-width:thin}
+.glq-topbar{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:24px 30px 19px}
+.glq-topbar>div{display:flex;flex-direction:column;gap:7px}
+.glq-kicker{font-size:10px;letter-spacing:.16em;font-weight:800;color:#779075}
+.glq-top-title{font:400 25px/1.12 "DM Serif Display",Georgia,serif;letter-spacing:-.025em}
+.glq-close{display:grid;place-items:center;border:1px solid #dce4d9;border-radius:50%;background:#f1f4ed;color:#315440;min-width:42px;min-height:42px;font:30px/1 Arial,sans-serif;cursor:pointer}
+.glq-progress{padding:0 30px 18px}
+.glq-progress-caption{display:flex;justify-content:space-between;color:#708274;font-size:12px;font-weight:700;margin-bottom:10px}
+.glq-track{height:6px;border-radius:12px;background:#e4e8df;overflow:hidden}
+#glq-progress-fill{height:100%;width:20%;background:#326246;transition:width .2s}
+.glq-content{padding:2px 30px 24px}
+.glq-content h2{font:400 clamp(30px,4.5vw,40px)/1.09 "DM Serif Display",Georgia,serif!important;letter-spacing:-.035em;margin:0 0 12px;color:#193b29}
+.glq-content>p:not(.glq-error){font-size:14px;color:#697c70;line-height:1.7;margin:0 0 23px}
+.glq-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.glq-option{min-height:64px;padding:14px;display:flex;align-items:center;justify-content:space-between;gap:7px;border-radius:12px;background:white;border:1px solid #dfe6da;color:#2c4837;cursor:pointer;text-align:left;font:700 13px/1.4 "DM Sans",Arial,sans-serif;transition:border-color .16s,background .16s,box-shadow .16s}
+.glq-option:hover{border-color:#639377;background:#f7fbf5}
+.glq-option.is-selected{border:2px solid #356f4a;background:#edf5eb;box-shadow:0 0 0 1px #356f4a14;padding:13px}
+.glq-choice-check{flex:0 0 20px;width:20px;height:20px;border:1px solid #b8c9b8;border-radius:50%;display:grid;place-items:center;font-size:12px;color:white}
+.is-selected .glq-choice-check{background:#356f4a;border-color:#356f4a}
+.glq-field-grid{display:grid;gap:13px}
+.glq-field{display:grid;gap:7px;color:#344e3c;font-size:12px;font-weight:800}
+.glq-field b{color:#a96437}
+.glq-field input,.glq-field textarea{background:white;border:1px solid #cedacf;color:#1d3628;border-radius:11px;padding:13px 14px;min-height:49px;width:100%;font:500 15px/1.4 "DM Sans",Arial,sans-serif;resize:vertical}
+.glq-field input:focus,.glq-field textarea:focus{border-color:#356f4a}
+.glq-field textarea{min-height:90px}
+.glq-helper{font-size:12px!important;color:#6f8071!important;margin:15px 0 0!important}
+.glq-consent{display:flex;align-items:flex-start;gap:11px;font-size:12px;font-weight:500;line-height:1.55;color:#627467}
+.glq-consent input{width:18px;height:18px;accent-color:#356f4a;flex:0 0 18px;margin-top:1px}
+.glq-preview-notice{border:1px solid #e8d5b4;background:#fdf7e9;border-radius:10px;padding:12px;color:#775a2d!important;font-size:12px!important;margin:15px 0 0!important}
+.glq-error{font-size:12px!important;color:#b14336!important;margin:15px 0 0!important;font-weight:700;line-height:1.5}
+.glq-error[hidden]{display:none}
+.glq-actions{padding:17px 30px 22px;border-top:1px solid #e4e9e1;display:flex;gap:10px;justify-content:space-between}
+.glq-actions[hidden]{display:none!important}
+.glq-primary,.glq-secondary{border-radius:99px;min-height:49px;padding:12px 24px;font-size:13px;font-weight:800;border:0;cursor:pointer}
+.glq-primary{color:white;background:#234e33}
+.glq-primary:hover{background:#386d48}
+.glq-primary:disabled{opacity:.6;cursor:wait}
+.glq-secondary{background:#e9eee7;color:#365a40}
+.glq-secondary[hidden]{visibility:hidden;display:inline-flex!important}
+.glq-footnote{text-align:center;color:#788878;font-size:10px;line-height:1.6;padding:0 25px 22px}
+.glq-finish-icon{width:50px;height:50px;border-radius:50%;background:#e7f2e4;color:#2b7143;font:32px "DM Serif Display",Georgia,serif;display:grid;place-items:center;margin-bottom:17px}
+.glq-summary{white-space:pre-wrap;overflow-wrap:anywhere;background:#eff2ed;border:1px solid #dfe6da;border-radius:10px;padding:12px;max-height:185px;overflow:auto;font:12px/1.6 monospace;color:#35513d}
+.glq-done{margin:15px 0 0 10px}
+.glq-floating-cta{position:fixed;z-index:115;right:22px;bottom:22px;border:1px solid #c3d6bd;background:#214a31;color:white;border-radius:99px;box-shadow:0 10px 28px #122b1880;padding:15px 24px;min-height:50px;font:800 13px "DM Sans",Arial,sans-serif;cursor:pointer}
+.glq-floating-cta:hover{background:#376e49}
+body.glq-locked .glq-floating-cta{display:none}
+@media(max-width:920px){
+.site-nav > .gl-brand-wordmark,.inner-nav-row > .gl-brand-wordmark{max-width:calc(100% - 70px)}
+.gl-brand-top{font-size:23px!important}.gl-brand-bottom{font-size:14px!important}
+}
+@media(max-width:580px){
+.site-nav > .gl-brand-wordmark,.inner-nav-row > .gl-brand-wordmark{max-width:calc(100vw - 100px)}
+.gl-brand-top{font-size:22px!important}.gl-brand-bottom{font-size:12px!important;line-height:1.16}
+.glq-overlay{padding:0;align-items:flex-end}
+.glq-dialog{width:100%;max-height:94dvh;border-radius:21px 21px 0 0;padding-bottom:env(safe-area-inset-bottom,0px)}
+.glq-topbar{padding:18px 20px 14px}.glq-progress{padding:0 20px 17px}
+.glq-content{padding:2px 20px 20px}.glq-content h2{font-size:33px!important}
+.glq-options{grid-template-columns:1fr;gap:8px}.glq-option{min-height:53px}
+.glq-actions{padding:13px 20px 17px}.glq-footnote{padding:0 16px 16px}
+.glq-floating-cta{bottom:max(12px,env(safe-area-inset-bottom,12px));right:12px;left:12px;max-width:380px;margin-inline:auto;width:calc(100% - 24px);min-height:49px}
+body:not(.glq-locked){padding-bottom:62px}
+}
+@media(prefers-reduced-motion:reduce){#glq-progress-fill,.glq-option{transition:none}}
