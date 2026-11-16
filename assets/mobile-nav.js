@@ -16,20 +16,33 @@
 /* Glasford quote quiz: reusable across every static website route. */
 (function(){
   "use strict";
-  const businessName="Glaford Tree Trimming & Landscape";
+  const businessName="Glasford Tree Trimming and Removal";
   // Add a verified endpoint before accepting live lead submissions.
   const quoteEndpoint=(typeof window.GLASFORD_QUOTE_WEBHOOK_URL==="string" ? window.GLASFORD_QUOTE_WEBHOOK_URL.trim() : "");
   document.querySelectorAll(".site-nav > a.site-logo-link, .inner-nav-row > a.site-logo-link").forEach(function(link){
     link.classList.add("gl-brand-wordmark");
     link.setAttribute("href","/");
     link.setAttribute("aria-label",businessName+" home");
+    // Retain the original Glasford logo instead of replacing it with text.
+    const originalLogo=link.querySelector("img.glasford-logo-image");
     link.replaceChildren();
+    const logoBox=document.createElement("span");
+    logoBox.className="gl-brand-logo";
+    if(originalLogo){
+      originalLogo.alt="";
+      originalLogo.setAttribute("aria-hidden","true");
+      logoBox.append(originalLogo);
+    }
+    const wordmark=document.createElement("span");
+    wordmark.className="gl-brand-copy";
     const top=document.createElement("span"),bottom=document.createElement("span");
     top.className="gl-brand-top";
     bottom.className="gl-brand-bottom";
-    top.textContent="Glaford";
-    bottom.textContent="Tree Trimming & Landscape";
-    link.append(top,bottom);
+    top.textContent="Glasford";
+    bottom.textContent="Tree Trimming and Removal";
+    wordmark.append(top,bottom);
+    if(originalLogo)link.append(logoBox,wordmark);
+    else link.append(wordmark);
   });
 
   const questions=[
@@ -52,7 +65,7 @@
   overlay.innerHTML=String.raw`
     <div class="glq-backdrop" data-glq-close></div>
     <section class="glq-dialog" role="dialog" aria-modal="true" aria-labelledby="glq-heading" aria-describedby="glq-intro">
-      <div class="glq-topbar"><div><span class="glq-kicker">GLAFORD TREE TRIMMING &amp; LANDSCAPE</span><span class="glq-top-title">Request a free estimate</span></div><button type="button" class="glq-close" data-glq-close aria-label="Close estimate form">×</button></div>
+      <div class="glq-topbar"><div><span class="glq-kicker">GLASFORD TREE TRIMMING AND REMOVAL</span><span class="glq-top-title">Request a free estimate</span></div><button type="button" class="glq-close" data-glq-close aria-label="Close estimate form">×</button></div>
       <div class="glq-progress"><div class="glq-progress-caption"><span id="glq-step">Step 1 of 5</span><span>About 1 minute</span></div><div class="glq-track"><div id="glq-progress-fill"></div></div></div>
       <form id="glq-form" novalidate>
         <div class="glq-content"><h2 id="glq-heading"></h2><p id="glq-intro"></p><div id="glq-fields"></div><p id="glq-error" class="glq-error" role="alert" hidden></p></div>
@@ -121,7 +134,7 @@
     if(lastFocus&&typeof lastFocus.focus==="function")lastFocus.focus();
   }
   function summaryText(){
-    return "Glaford Tree Trimming & Landscape - estimate request\n"+
+    return "Glasford Tree Trimming and Removal - estimate request\n"+
       "Service: "+(answers.service||"")+"\nProject size: "+(answers.size||"")+"\nTiming: "+(answers.timing||"")+
       "\nZIP: "+(answers.zip||"")+"\nCity: "+(answers.city||"")+"\nName: "+(answers.name||"")+
       "\nPhone: "+(answers.phone||"")+"\nEmail: "+(answers.email||"")+"\nNotes: "+(answers.notes||"");

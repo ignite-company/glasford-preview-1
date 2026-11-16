@@ -211,3 +211,43 @@ body.glq-locked .glq-floating-cta{display:none}
 body:not(.glq-locked){padding-bottom:62px}
 }
 @media(prefers-reduced-motion:reduce){#glq-progress-fill,.glq-option{transition:none}}
+
+/* Keep the original Glasford tree/G mark as tall as the two-line business name. */
+.site-nav > .gl-brand-wordmark,.inner-nav-row > .gl-brand-wordmark{
+  display:inline-flex!important;
+  flex-direction:row!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:11px!important;
+  min-width:0!important;
+  max-width:min(475px,49vw)!important;
+  text-decoration:none!important;
+  white-space:normal;
+}
+.gl-brand-logo{
+  display:flex!important;align-items:center;justify-content:center;
+  width:52px!important;height:52px!important;flex:0 0 52px!important;
+}
+.gl-brand-logo .glasford-logo-image{
+  display:block!important;
+  width:52px!important;height:52px!important;
+  max-width:52px!important;max-height:52px!important;
+  object-fit:contain!important;object-position:center!important;
+}
+.gl-brand-copy{display:flex;flex-direction:column;justify-content:center;gap:1px;min-width:0}
+.gl-brand-copy .gl-brand-top{font-size:clamp(24px,2vw,30px)!important;line-height:1.04!important;white-space:nowrap}
+.gl-brand-copy .gl-brand-bottom{font-size:clamp(12px,1.17vw,17px)!important;line-height:1.16!important;white-space:nowrap}
+@media(max-width:920px){
+  .site-nav > .gl-brand-wordmark,.inner-nav-row > .gl-brand-wordmark{max-width:calc(100% - 68px)!important;gap:10px!important}
+  .gl-brand-logo{width:45px!important;height:45px!important;flex-basis:45px!important}
+  .gl-brand-logo .glasford-logo-image{width:45px!important;height:45px!important;max-width:45px!important;max-height:45px!important}
+  .gl-brand-copy .gl-brand-top{font-size:23px!important}
+  .gl-brand-copy .gl-brand-bottom{font-size:13px!important}
+}
+@media(max-width:580px){
+  .site-nav > .gl-brand-wordmark,.inner-nav-row > .gl-brand-wordmark{max-width:calc(100vw - 99px)!important;gap:8px!important}
+  .gl-brand-logo{width:40px!important;height:40px!important;flex-basis:40px!important}
+  .gl-brand-logo .glasford-logo-image{width:40px!important;height:40px!important;max-width:40px!important;max-height:40px!important}
+  .gl-brand-copy .gl-brand-top{font-size:21px!important}
+  .gl-brand-copy .gl-brand-bottom{font-size:12px!important;letter-spacing:-.025em!important}
+}
