@@ -229,4 +229,11 @@
   floating.setAttribute("aria-label","Open free estimate quiz");
   floating.addEventListener("click",openQuiz);
   document.body.appendChild(floating);
+  // Keep an immediate calling option next to the quote CTA on small screens.
+  const callButton=document.createElement("a");
+  callButton.className="gl-call-sticky";
+  callButton.href="tel:+19548322425";
+  callButton.textContent="☎ Call now";
+  callButton.setAttribute("aria-label","Call Glasford at (954) 832-2425");
+  document.body.appendChild(callButton);
 })();

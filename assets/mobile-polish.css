@@ -251,3 +251,41 @@ body:not(.glq-locked){padding-bottom:62px}
   .gl-brand-copy .gl-brand-top{font-size:21px!important}
   .gl-brand-copy .gl-brand-bottom{font-size:12px!important;letter-spacing:-.025em!important}
 }
+
+
+/* Client-approved click-to-call navigation and small-screen layout. */
+.gl-header-call{display:inline-flex;align-items:center;justify-content:center;gap:8px;flex:0 0 auto;min-width:44px;min-height:44px;padding:8px 6px;color:#26523b!important;border-radius:10px;font:800 13px/1.2 "Manrope",Arial,sans-serif;white-space:nowrap}
+.gl-header-call:hover{background:#e5efe2}
+.gl-header-call-icon{display:grid;place-items:center;width:25px;height:25px;font-size:21px}
+.gl-header-call-text{white-space:nowrap}
+.gl-footer-phone{display:inline-flex;align-items:center;min-height:44px;margin-top:10px;font-size:14px;font-weight:800;text-decoration:underline;text-underline-offset:4px;color:inherit}
+.gl-menu-call{display:flex!important;align-items:center;min-height:52px!important;padding:12px 16px!important;border-radius:10px!important;background:#e2efdc!important;color:#204a32!important;font-size:14px!important;font-weight:900!important;white-space:normal}
+.gl-hero-call{display:inline-flex;align-items:center;min-height:44px;margin-top:10px;font-size:14px;font-weight:800;color:#28533c;text-decoration:underline;text-underline-offset:4px}
+.gl-contact-call{display:inline-flex;align-items:center;justify-content:center;min-height:49px;margin-left:14px;font-size:14px;font-weight:900;color:#28533c;text-decoration:underline;text-underline-offset:4px}
+.p2 .cta .p-footnote a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.gl-call-sticky{display:none}
+@media(max-width:1320px){.gl-header-call-text{display:none}}
+@media(max-width:1120px){
+.p2 .site-nav>.gl-header-call,.inner-nav-row>.gl-header-call{margin-left:auto}
+.p2 .site-nav>.gl-mobile-menu,.inner-nav-row>.menu{margin-left:0!important}
+}
+@media(max-width:580px){
+.p2 .site-nav{gap:6px!important;padding-inline:12px!important}
+.inner-nav .inner-nav-row{gap:6px!important;padding-inline:12px!important}
+.gl-header-call{padding:0;width:44px;height:44px;min-width:44px}
+.site-nav>.gl-brand-wordmark,.inner-nav-row>.gl-brand-wordmark{max-width:calc(100vw - 146px)!important}
+.p2 .hero .gl-hero-call{display:flex;justify-content:center;margin-top:9px}
+.gl-contact-call{display:flex;width:100%;max-width:370px;margin:10px 0 0}
+.gl-call-sticky{display:flex;align-items:center;justify-content:center;position:fixed;z-index:116;left:12px;bottom:max(12px,env(safe-area-inset-bottom,12px));width:calc(42% - 12px);min-height:50px;border:1px solid #c9d9c4;border-radius:99px;background:#f5f8f1;color:#204831;box-shadow:0 10px 28px #102c1740;font:900 13px/1.2 "DM Sans",Arial,sans-serif;text-align:center}
+.glq-floating-cta{left:auto!important;right:12px!important;width:calc(58% - 18px)!important;max-width:none!important;margin:0!important;padding:10px 8px!important;font-size:12px!important;min-height:50px!important}
+body:not(.glq-locked){padding-bottom:82px!important}
+body.glq-locked .gl-call-sticky{display:none}
+}
+@media(max-width:380px){
+.site-nav>.gl-brand-wordmark,.inner-nav-row>.gl-brand-wordmark{max-width:calc(100vw - 142px)!important;gap:5px!important}
+.gl-brand-logo{width:31px!important;height:31px!important;flex-basis:31px!important}
+.gl-brand-logo .glasford-logo-image{width:31px!important;height:31px!important;max-width:31px!important;max-height:31px!important}
+.gl-brand-copy .gl-brand-top{font-size:19px!important}
+.gl-brand-copy .gl-brand-bottom{font-size:10px!important;white-space:normal!important;line-height:1.1!important}
+.gl-call-sticky{font-size:12px}
+}
