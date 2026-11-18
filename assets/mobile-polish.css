@@ -480,43 +480,43 @@ body.glq-locked .gl-call-sticky{display:none}
 }
 
 
-/* Emphasize the botanical G with a slightly smaller, optically lower "lasford". */
+/* Glasford wordmark: G increased 10%, lasford reduced 5%, baseline positions preserved. */
 .gl-brand-top .gl-brand-logo{
-  flex-basis:clamp(62px,5.2vw,76px)!important;
-  width:clamp(62px,5.2vw,76px)!important;
-  height:clamp(62px,5.2vw,76px)!important;
+  flex-basis:clamp(68.2px,5.72vw,83.6px)!important;
+  width:clamp(68.2px,5.72vw,83.6px)!important;
+  height:clamp(68.2px,5.72vw,83.6px)!important;
 }
 .gl-brand-copy .gl-brand-top .gl-brand-top-rest{
   position:relative!important;
-  font-size:.75em!important;
+  font-size:.7125em!important;
   line-height:1!important;
   letter-spacing:-.045em!important;
   top:11px!important;
 }
 @media(min-width:1121px) and (max-width:1350px){
-  .gl-brand-top .gl-brand-logo{flex-basis:62px!important;width:62px!important;height:62px!important}
+  .gl-brand-top .gl-brand-logo{flex-basis:68.2px!important;width:68.2px!important;height:68.2px!important}
 }
 @media(max-width:1120px){
   .gl-brand-top .gl-brand-logo{
-    flex-basis:clamp(52px,6vw,66px)!important;
-    width:clamp(52px,6vw,66px)!important;
-    height:clamp(52px,6vw,66px)!important;
+    flex-basis:clamp(57.2px,6.6vw,72.6px)!important;
+    width:clamp(57.2px,6.6vw,72.6px)!important;
+    height:clamp(57.2px,6.6vw,72.6px)!important;
   }
   .gl-brand-copy .gl-brand-top .gl-brand-top-rest{top:10px!important}
 }
 @media(max-width:580px){
   .gl-brand-top .gl-brand-logo{
-    flex-basis:clamp(40px,11.2vw,52px)!important;
-    width:clamp(40px,11.2vw,52px)!important;
-    height:clamp(40px,11.2vw,52px)!important;
+    flex-basis:clamp(44px,12.32vw,57.2px)!important;
+    width:clamp(44px,12.32vw,57.2px)!important;
+    height:clamp(44px,12.32vw,57.2px)!important;
   }
-  .gl-brand-copy .gl-brand-top .gl-brand-top-rest{font-size:.78em!important;top:8px!important}
+  .gl-brand-copy .gl-brand-top .gl-brand-top-rest{font-size:.741em!important;top:8px!important}
 }
 @media(max-width:380px){
   .gl-brand-top .gl-brand-logo{
-    flex-basis:clamp(36px,10.7vw,42px)!important;
-    width:clamp(36px,10.7vw,42px)!important;
-    height:clamp(36px,10.7vw,42px)!important;
+    flex-basis:clamp(39.6px,11.77vw,46.2px)!important;
+    width:clamp(39.6px,11.77vw,46.2px)!important;
+    height:clamp(39.6px,11.77vw,46.2px)!important;
   }
-  .gl-brand-copy .gl-brand-top .gl-brand-top-rest{font-size:.78em!important;top:6px!important}
+  .gl-brand-copy .gl-brand-top .gl-brand-top-rest{font-size:.741em!important;top:6px!important}
 }
