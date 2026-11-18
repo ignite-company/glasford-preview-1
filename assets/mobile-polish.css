@@ -478,3 +478,18 @@ body.glq-locked .gl-call-sticky{display:none}
   }
   .gl-brand-copy .gl-brand-top .gl-brand-top-rest{top:1px!important}
 }
+
+
+/* Let the botanical G be the hero: scale down only the following "lasford" letters. */
+.gl-brand-copy .gl-brand-top .gl-brand-top-rest{
+  font-size:.80em!important;
+  line-height:1!important;
+  letter-spacing:-.045em!important;
+  top:5px!important;
+}
+@media(max-width:580px){
+  .gl-brand-copy .gl-brand-top .gl-brand-top-rest{font-size:.83em!important;top:3px!important}
+}
+@media(max-width:380px){
+  .gl-brand-copy .gl-brand-top .gl-brand-top-rest{font-size:.83em!important;top:2px!important}
+}
