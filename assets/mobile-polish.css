@@ -480,16 +480,43 @@ body.glq-locked .gl-call-sticky{display:none}
 }
 
 
-/* Let the botanical G be the hero: scale down only the following "lasford" letters. */
+/* Emphasize the botanical G with a slightly smaller, optically lower "lasford". */
+.gl-brand-top .gl-brand-logo{
+  flex-basis:clamp(62px,5.2vw,76px)!important;
+  width:clamp(62px,5.2vw,76px)!important;
+  height:clamp(62px,5.2vw,76px)!important;
+}
 .gl-brand-copy .gl-brand-top .gl-brand-top-rest{
-  font-size:.80em!important;
+  position:relative!important;
+  font-size:.75em!important;
   line-height:1!important;
   letter-spacing:-.045em!important;
-  top:5px!important;
+  top:11px!important;
+}
+@media(min-width:1121px) and (max-width:1350px){
+  .gl-brand-top .gl-brand-logo{flex-basis:62px!important;width:62px!important;height:62px!important}
+}
+@media(max-width:1120px){
+  .gl-brand-top .gl-brand-logo{
+    flex-basis:clamp(52px,6vw,66px)!important;
+    width:clamp(52px,6vw,66px)!important;
+    height:clamp(52px,6vw,66px)!important;
+  }
+  .gl-brand-copy .gl-brand-top .gl-brand-top-rest{top:10px!important}
 }
 @media(max-width:580px){
-  .gl-brand-copy .gl-brand-top .gl-brand-top-rest{font-size:.83em!important;top:3px!important}
+  .gl-brand-top .gl-brand-logo{
+    flex-basis:clamp(40px,11.2vw,52px)!important;
+    width:clamp(40px,11.2vw,52px)!important;
+    height:clamp(40px,11.2vw,52px)!important;
+  }
+  .gl-brand-copy .gl-brand-top .gl-brand-top-rest{font-size:.78em!important;top:8px!important}
 }
 @media(max-width:380px){
-  .gl-brand-copy .gl-brand-top .gl-brand-top-rest{font-size:.83em!important;top:2px!important}
+  .gl-brand-top .gl-brand-logo{
+    flex-basis:clamp(36px,10.7vw,42px)!important;
+    width:clamp(36px,10.7vw,42px)!important;
+    height:clamp(36px,10.7vw,42px)!important;
+  }
+  .gl-brand-copy .gl-brand-top .gl-brand-top-rest{font-size:.78em!important;top:6px!important}
 }
