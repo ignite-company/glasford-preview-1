@@ -522,11 +522,11 @@ body.glq-locked .gl-call-sticky{display:none}
 }
 
 
-/* Align the visible bottom of "lasford" with the decorative G on all screen sizes. */
+/* Optical baseline match: screenshot showed lasford ending 3px below the G. */
 .gl-brand-copy .gl-brand-top{
   align-items:flex-end!important;
 }
 .gl-brand-copy .gl-brand-top .gl-brand-top-rest{
   position:relative!important;
-  top:.15em!important;
+  top:calc(.15em - 3px)!important;
 }
