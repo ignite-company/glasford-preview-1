@@ -430,3 +430,16 @@ body.glq-locked .gl-call-sticky{display:none}
   }
   .gl-brand-copy .gl-brand-bottom{font-size:10px!important;letter-spacing:-.015em!important}
 }
+
+
+/* Optical baseline correction: the botanical G image extends below the glyphs. */
+.gl-brand-copy .gl-brand-top .gl-brand-top-rest{
+  position:relative!important;
+  top:6px!important;
+}
+@media(max-width:580px){
+  .gl-brand-copy .gl-brand-top .gl-brand-top-rest{top:4px!important}
+}
+@media(max-width:380px){
+  .gl-brand-copy .gl-brand-top .gl-brand-top-rest{top:3px!important}
+}
