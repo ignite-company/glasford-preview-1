@@ -289,3 +289,59 @@ body.glq-locked .gl-call-sticky{display:none}
 .gl-brand-copy .gl-brand-bottom{font-size:10px!important;white-space:normal!important;line-height:1.1!important}
 .gl-call-sticky{font-size:12px}
 }
+
+
+/* Wordmark: the existing stylized G begins "Glasford" instead of sitting beside it. */
+.site-nav > .gl-brand-wordmark,.inner-nav-row > .gl-brand-wordmark{
+  flex-direction:row!important;
+  justify-content:flex-start!important;
+  align-items:center!important;
+  gap:0!important;
+}
+.site-nav > .gl-brand-wordmark .gl-brand-copy,
+.inner-nav-row > .gl-brand-wordmark .gl-brand-copy{
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:flex-start!important;
+  justify-content:center!important;
+  gap:1px!important;
+}
+.gl-brand-copy .gl-brand-top{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:0!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+}
+.gl-brand-top .gl-brand-logo{
+  display:inline-flex!important;
+  flex:0 0 35px!important;
+  width:35px!important;
+  height:35px!important;
+  margin-right:0!important;
+  vertical-align:middle;
+}
+.gl-brand-top .gl-brand-logo .glasford-logo-image{
+  display:block!important;
+  width:35px!important;
+  height:35px!important;
+  max-width:35px!important;
+  max-height:35px!important;
+  object-fit:contain!important;
+  object-position:center!important;
+}
+.gl-brand-top-rest{display:inline-block;line-height:1;letter-spacing:-.045em}
+.gl-brand-copy .gl-brand-bottom{margin-left:2px}
+@media(max-width:920px){
+  .gl-brand-top .gl-brand-logo{flex-basis:29px!important;width:29px!important;height:29px!important}
+  .gl-brand-top .gl-brand-logo .glasford-logo-image{width:29px!important;height:29px!important;max-width:29px!important;max-height:29px!important}
+}
+@media(max-width:580px){
+  .gl-brand-top .gl-brand-logo{flex-basis:26px!important;width:26px!important;height:26px!important}
+  .gl-brand-top .gl-brand-logo .glasford-logo-image{width:26px!important;height:26px!important;max-width:26px!important;max-height:26px!important}
+}
+@media(max-width:380px){
+  .gl-brand-top .gl-brand-logo{flex-basis:24px!important;width:24px!important;height:24px!important}
+  .gl-brand-top .gl-brand-logo .glasford-logo-image{width:24px!important;height:24px!important;max-width:24px!important;max-height:24px!important}
+}

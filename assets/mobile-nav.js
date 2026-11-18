@@ -38,11 +38,18 @@
     const top=document.createElement("span"),bottom=document.createElement("span");
     top.className="gl-brand-top";
     bottom.className="gl-brand-bottom";
-    top.textContent="Glasford";
+    // The original G mark is the first letter of Glasford, not a separate icon.
+    if(originalLogo){
+      const remainder=document.createElement("span");
+      remainder.className="gl-brand-top-rest";
+      remainder.textContent="lasford";
+      top.append(logoBox,remainder);
+    }else{
+      top.textContent="Glasford";
+    }
     bottom.textContent="Tree Trimming and Removal";
     wordmark.append(top,bottom);
-    if(originalLogo)link.append(logoBox,wordmark);
-    else link.append(wordmark);
+    link.append(wordmark);
   });
 
   const questions=[
