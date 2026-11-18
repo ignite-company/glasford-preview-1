@@ -530,3 +530,11 @@ body.glq-locked .gl-call-sticky{display:none}
   position:relative!important;
   top:calc(.15em - 3px)!important;
 }
+
+/* Tighten G-to-lasford spacing without affecting the optical baseline. */
+.gl-brand-copy .gl-brand-top .gl-brand-top-rest{
+  margin-left:-6px!important;
+}
+@media(max-width:580px){
+  .gl-brand-copy .gl-brand-top .gl-brand-top-rest{margin-left:-4px!important}
+}
