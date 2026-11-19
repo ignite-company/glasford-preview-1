@@ -14,7 +14,7 @@ Approved **Preview 2** was retained as the sole design. The former three-preview
 - `/service-areas/west-palm-beach/`: West Palm Beach page.
 - `/about/`: Business approach.
 - `/gallery/`: Clearly labeled illustrative stock imagery.
-- `/contact/`: Estimate information and contact page. The intake workflow is **not connected** yet.
+- `/contact/`: Estimate information and contact page. The estimate intake form is wired to the email relay below, with recipient confirmation required before live email delivery.
 
 ## Search readiness
 
@@ -41,3 +41,16 @@ Stock images come from Pexels and are **not** represented as Glasford's complete
 ## Notes
 
 Port St. Lucie is in St. Lucie County. West Palm Beach is in Palm Beach County. Copy distinguishes the two areas; coverage outside them is described as subject to confirmation.
+
+
+## Estimate lead notification routing
+
+The reusable quote quiz in `assets/mobile-nav.js` sends submissions using the FormSubmit AJAX endpoint `https://formsubmit.co/ajax/glasfordsmith1977@gmail.com`.
+
+- **Primary recipient:** glasfordsmith1977@gmail.com
+- **CC recipient:** asher.igniteco@gmail.com, passed as `_cc`.
+- Email includes name, phone, optional email, service, project size, timeline, ZIP, city, project notes, contact consent, page URL, and time submitted.
+- The email's Reply-To uses the lead's email when supplied.
+- FormSubmit is a third-party email relay. The primary inbox **must click its Activate Form link** after the first form submission before normal notification delivery begins. FormSubmit says it retains pre-activation submissions for up to 30 days. The user interface distinguishes pending activation from accepted delivery.
+- After activation, conduct a real end-to-end submission test and check both the primary and CC inboxes, including spam. A successful deployment alone does not verify email receipt.
+- The service currently uses FormSubmit's AJAX endpoint and its honeypot; reCAPTCHA is disabled to keep the estimate flow mobile-friendly. Monitor for spam and switch to an authenticated delivery backend if volume increases.

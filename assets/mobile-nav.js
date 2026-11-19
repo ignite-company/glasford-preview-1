@@ -17,8 +17,9 @@
 (function(){
   "use strict";
   const businessName="Glasford Tree Trimming and Removal";
-  // Add a verified endpoint before accepting live lead submissions.
-  const quoteEndpoint=(typeof window.GLASFORD_QUOTE_WEBHOOK_URL==="string" ? window.GLASFORD_QUOTE_WEBHOOK_URL.trim() : "");
+  // Hosted email relay. First-time delivery requires the recipient to activate the form.
+  const quoteEndpoint="https://formsubmit.co/ajax/glasfordsmith1977@gmail.com";
+  const quoteCc="asher.igniteco@gmail.com";
   document.querySelectorAll(".site-nav > a.site-logo-link, .inner-nav-row > a.site-logo-link").forEach(function(link){
     link.classList.add("gl-brand-wordmark");
     link.setAttribute("href","/");
@@ -75,6 +76,7 @@
       <div class="glq-topbar"><div><span class="glq-kicker">GLASFORD TREE TRIMMING AND REMOVAL</span><span class="glq-top-title">Request a free estimate</span></div><button type="button" class="glq-close" data-glq-close aria-label="Close estimate form">×</button></div>
       <div class="glq-progress"><div class="glq-progress-caption"><span id="glq-step">Step 1 of 5</span><span>About 1 minute</span></div><div class="glq-track"><div id="glq-progress-fill"></div></div></div>
       <form id="glq-form" novalidate>
+        <label aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden">Leave this field empty<input type="text" name="_honey" id="glq-honey" tabindex="-1" autocomplete="off"></label>
         <div class="glq-content"><h2 id="glq-heading"></h2><p id="glq-intro"></p><div id="glq-fields"></div><p id="glq-error" class="glq-error" role="alert" hidden></p></div>
         <div class="glq-actions"><button type="button" id="glq-back" class="glq-secondary">Back</button><button type="submit" id="glq-next" class="glq-primary">Continue <span aria-hidden="true">→</span></button></div>
       </form>
@@ -146,15 +148,18 @@
       "\nZIP: "+(answers.zip||"")+"\nCity: "+(answers.city||"")+"\nName: "+(answers.name||"")+
       "\nPhone: "+(answers.phone||"")+"\nEmail: "+(answers.email||"")+"\nNotes: "+(answers.notes||"");
   }
-  function showResult(sent){
+  function showResult(sent,activationPending=false){
     const content=overlay.querySelector(".glq-content");
     form.querySelector(".glq-actions").hidden=true;
     [title,intro,fields,error].forEach(function(el){el.hidden=true;});
     const result=document.createElement("div");result.className="glq-finish";content.appendChild(result);
-    const symbol=document.createElement("div");symbol.className="glq-finish-icon";symbol.textContent=sent?"✓":"✳";
-    const h=document.createElement("h2");h.id="glq-heading";h.textContent=sent?"Thank you! Your request was sent.":"Your quote details are ready";
-    const p=document.createElement("p");p.textContent=sent?"We received your information. Glasford will review your request and follow up.":"This is a site preview. Your request has not been sent because the form has no connected submission destination yet.";
+    const symbol=document.createElement("div");symbol.className="glq-finish-icon";symbol.textContent=sent?"✓":activationPending?"!":"✳";
+    const h=document.createElement("h2");h.id="glq-heading";h.textContent=sent?"Thank you! Your request was sent.":activationPending?"Request recorded, email activation pending":"Your quote details are ready";
+    const p=document.createElement("p");p.textContent=sent?"Your information has been accepted for delivery to Glasford. Glasford will review your request and follow up.":activationPending?"The email notification service is waiting for Glasford to activate this form. For immediate assistance, please call (954) 832-2425.":"This is a site preview. Your request has not been sent because the form has no connected submission destination yet.";
     result.append(symbol,h,p);
+    if(activationPending){
+      const call=document.createElement("a");call.href="tel:+19548322425";call.textContent="Call Glasford: (954) 832-2425";call.className="glq-primary";call.style.display="inline-flex";call.style.marginTop="12px";result.appendChild(call);
+    }
     if(!sent){
       const pre=document.createElement("pre");pre.className="glq-summary";pre.textContent=summaryText();result.appendChild(pre);
       const copy=document.createElement("button");copy.type="button";copy.className="glq-primary";copy.textContent="Copy my request";
@@ -165,7 +170,7 @@
       result.appendChild(copy);
     }
     const done=document.createElement("button");done.type="button";done.className="glq-secondary glq-done";done.textContent="Close";done.addEventListener("click",closeQuiz);result.appendChild(done);
-    stepLabel.textContent=sent?"Request complete":"Preview complete";
+    stepLabel.textContent=sent?"Request complete":activationPending?"Delivery pending":"Preview complete";
     fill.style.width="100%";
     done.focus();
   }
@@ -191,17 +196,41 @@
       const email=answers.email||"";
       if(email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){showError("Enter a valid email, or leave it blank.");fields.querySelector("#glq-email").focus();return;}
       if(!answers.consent){showError("Please confirm that we can contact you about your request.");fields.querySelector("#glq-consent").focus();return;}
-      if(!quoteEndpoint){showResult(false);return;}
       busy=true;next.disabled=true;next.textContent="Sending…";
       try{
-        const res=await fetch(quoteEndpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({
-          source:"glasford-website-quote-funnel",submittedAt:new Date().toISOString(),page:location.href,
-          service:answers.service,projectSize:answers.size,timing:answers.timing,zip:answers.zip,city:answers.city,
-          name:answers.name,phone:answers.phone,email:answers.email,notes:answers.notes,contactConsent:answers.consent
+        const res=await fetch(quoteEndpoint,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({
+          _subject:"New Glasford Website Estimate Request",
+          _cc:quoteCc,
+          _template:"table",
+          _captcha:"false",
+          _honey:form.querySelector("#glq-honey")?.value||"",
+          _url:location.href,
+          _replyto:answers.email||"",
+          name:answers.name,
+          phone:answers.phone,
+          email:answers.email||"Not supplied",
+          service:answers.service,
+          project_size:answers.size,
+          desired_timing:answers.timing,
+          zip_code:answers.zip,
+          city:answers.city,
+          project_notes:answers.notes||"None supplied",
+          contact_consent:answers.consent?"Yes":"No",
+          source:"Glasford website estimate form",
+          submitted_at:new Date().toISOString(),
+          page:location.href
         })});
-        if(!res.ok)throw new Error("Submission could not be confirmed");
+        const data=await res.json();
+        const providerMessage=String(data.message||"");
+        if(/activat|confirm.*(email|form)/i.test(providerMessage)){
+          busy=false;showResult(false,true);return;
+        }
+        if(!res.ok||String(data.success).toLowerCase()!=="true")throw new Error("Submission was not accepted");
         busy=false;showResult(true);
-      }catch(err){busy=false;next.disabled=false;next.textContent="Try sending again →";showError("The request could not be sent. Please try again.");}
+      }catch(err){
+        busy=false;next.disabled=false;next.textContent="Try sending again →";
+        showError("Your request could not be confirmed. Please try again or call (954) 832-2425.");
+      }
       return;
     }
     current++;render();
